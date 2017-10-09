@@ -1,6 +1,6 @@
 {
   "name": "azure-storage-promisified",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Azure Storage with Promises",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
