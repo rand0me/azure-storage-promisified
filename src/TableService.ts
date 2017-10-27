@@ -27,7 +27,7 @@ export class AzureTable {
                 err ? reject(err) : resolve(result)));
     }
 
-    public queryEntities<T>(query: services.table.TableQuery, token: TableService.TableContinuationToken) {
+    public queryEntities<T>(query: services.table.TableQuery, token?: TableService.TableContinuationToken) {
         return new Promise((resolve, reject) =>
             this.service.queryEntities(this.table, query, token, (err, result) =>
                 err ? reject(err) : resolve(result)));
