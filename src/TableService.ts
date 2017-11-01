@@ -1,6 +1,6 @@
 import { TableService, common, services } from 'azure-storage';
 
-export class AzureTable {
+export class AzureTable<T> {
     constructor(protected service: TableService, protected table: string) { }
 
     public createTableIfNotExist(options?: common.RequestOptions) {
@@ -9,27 +9,27 @@ export class AzureTable {
                 err ? reject(err) : resolve(result)));
     }
 
-    public insertEntity(entity: any) {
+    public insertEntity(entity: T) {
         return new Promise((resolve, reject) =>
             this.service.insertEntity(this.table, entity, (err, result) =>
                 err ? reject(err) : resolve(result)));
     }
 
-    public insertOrReplaceEntity(entity: any) {
+    public insertOrReplaceEntity(entity: T) {
         return new Promise((resolve, reject) =>
             this.service.insertOrReplaceEntity(this.table, entity, (err, result) =>
                 err ? reject(err) : resolve(result)));
     }
 
-    public retrieveEntity<T>(partKey: string, rowKey: string) {
+    public retrieveEntity(partKey: string, rowKey: string) {
         return new Promise((resolve, reject) =>
-            this.service.retrieveEntity(this.table, partKey, rowKey, (err, result) =>
+            this.service.retrieveEntity<T>(this.table, partKey, rowKey, (err, result) =>
                 err ? reject(err) : resolve(result)));
     }
 
-    public queryEntities<T>(query: services.table.TableQuery, token?: TableService.TableContinuationToken) {
+    public queryEntities(query: services.table.TableQuery, token?: TableService.TableContinuationToken) {
         return new Promise((resolve, reject) =>
-            this.service.queryEntities(this.table, query, token, (err, result) =>
+            this.service.queryEntities<T>(this.table, query, token, (err, result) =>
                 err ? reject(err) : resolve(result)));
     }
 
