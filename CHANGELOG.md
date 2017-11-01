@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/rand0me/azure-storage-promisified/compare/v0.3.1...v1.0.0) (2017-11-01)
+
+
+### Features
+
+* **TableService:** Improve typings, add class type ([c21c0e5](https://github.com/rand0me/azure-storage-promisified/commit/c21c0e5))
+
+
+### BREAKING CHANGES
+
+* **TableService:** AzureTable is a generic
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/rand0me/azure-storage-promisified/compare/v0.3.0...v0.3.1) (2017-10-27)
 
