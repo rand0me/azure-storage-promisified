@@ -24,13 +24,13 @@ export class AzureTable<T> {
     public retrieveEntity(partKey: string, rowKey: string) {
         return new Promise((resolve, reject) =>
             this.service.retrieveEntity<T>(this.table, partKey, rowKey, (err, result) =>
-                err ? reject(err) : resolve(result)));
+                err ? reject(err) : resolve(result))) as Promise<T>;
     }
 
     public queryEntities(query: services.table.TableQuery, token?: TableService.TableContinuationToken) {
         return new Promise((resolve, reject) =>
             this.service.queryEntities<T>(this.table, query, token, (err, result) =>
-                err ? reject(err) : resolve(result)));
+                err ? reject(err) : resolve(result))) as Promise<TableService.QueryEntitiesResult<T>>;
     }
 
     public deleteEntity(PartitionKey: string, RowKey: string) {
