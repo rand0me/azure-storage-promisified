@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/rand0me/azure-storage-promisified/compare/v1.0.1...v1.0.2) (2017-11-10)
+
+
+### Bug Fixes
+
+* **QueueService:** Add missed createMessage method and options params ([9bf7b8f](https://github.com/rand0me/azure-storage-promisified/commit/9bf7b8f))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/rand0me/azure-storage-promisified/compare/v1.0.0...v1.0.1) (2017-11-01)
 
